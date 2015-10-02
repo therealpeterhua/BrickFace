@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    html, body, canvas {
+      padding: 0px;
+      margin: 0px;
+      overflow: hidden
+    }
+
+    body {
+      /*background-image: url("http://i.telegraph.co.uk/multimedia/archive/02357/eso-summary_2357457k.jpg");
+      background-size: cover;*/
+      position: relative;
+      background: black;
+    }
+
+    #game-canvas {
+      display: block;
+      margin: 50px auto;
+      border: 2px solid white;
+    }
+
+    </style>
+  </head>
+  <body>
+    <canvas id="game-canvas"></canvas>
+
+    <script src="vendor/keymaster.js"></script>
+    <script src="lib/ball.js"></script>
+    <script src="lib/paddle.js"></script>
+    <script src="lib/game.js"></script>
+    <script src="lib/game_view.js"></script>
+    <script type="text/javascript">
+    </script>
+    <script src="lib/brick.js"></script>
+
+    <script>
+      //PH -- technically, this is document-on-ready -- only runs after all files are loaded
+
+      var canvasEl = document.getElementById("game-canvas");
+      canvasEl.height = Bricks.Game.DIM_Y;      //should grab from Game class. Can also set CSS on it...
+      canvasEl.width = Bricks.Game.DIM_X;
+
+      var gameView = new Bricks.GameView( canvasEl.getContext("2d") );
+
+      gameView.start();
+
+      // var game = new Bricks.GameView(canvasEl.getContext("2d"));
+      // game.start();
+      // console.log(key.getPressedKeyCodes())
+    </script>
+  </body>
+</html>
