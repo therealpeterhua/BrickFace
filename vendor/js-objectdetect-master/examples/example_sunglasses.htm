@@ -23,6 +23,7 @@
 			compatibility.getUserMedia({video: true}, function(stream) {
 				try {
 					video.src = compatibility.URL.createObjectURL(stream);
+					this.usingWebcam = true;
 				} catch (error) {
 					video.src = stream;
 				}

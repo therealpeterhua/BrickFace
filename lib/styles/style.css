@@ -22,6 +22,9 @@ body {
   float: left;
   margin: 10px;
   border: 2px solid white;
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg); /* Safari and Chrome */
+  -moz-transform: rotateY(180deg); /* Firefox */
 }
 
 section.user-webcam {
@@ -35,6 +38,9 @@ section.user-webcam {
 section.user-webcam video {
   width: 100%;
   margin-top: 20px;
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg); /* Safari and Chrome */
+  -moz-transform: rotateY(180deg); /* Firefox */
 }
 
 canvas#webcam-canvas {
