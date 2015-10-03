@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="stuff, to, help, search, engines, not" name="keywords">
+<meta content="What this page is about." name="description">
+<meta content="Display Webcam Stream" name="title">
+<title>Display Webcam Stream</title>
+
+<style>
+#container {
+    margin: 0px auto;
+    width: 500px;
+    height: 375px;
+    border: 10px #333 solid;
+}
+#videoElement {
+    width: 500px;
+    height: 375px;
+    background-color: #666;
+}
+</style>
+</head>
+
+<body>
+<div id="container">
+    <video autoplay="true" id="videoElement">
+
+    </video>
+</div>
+<script>
+  var video = document.querySelector("#videoElement");
+  //this just grabs the DOM
+
+  navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
+  //set the getUserMedia function, which may diff across browsers
+
+  if (navigator.getUserMedia) {
+    navigator.getUserMedia({video: true}, handleVideo, videoError);
+  }
+  //tells it to get video from the user. (guessing can also ask for mic?), then handle the video if user grants request, else handles user denial, etc.
+
+  function handleVideo(stream) {
+    video.src = window.URL.createObjectURL(stream);
+  };
+  //this adds the source of the stream (which it turns into URL) to the DOM #videoElement
+
+  function videoError(e) {
+    alert("Oops, looks like I'm unable to set up your webcam!");
+  };
+</script>
+</body>
+</html>
