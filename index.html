@@ -3,37 +3,29 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <style>
-    html, body, canvas {
-      padding: 0px;
-      margin: 0px;
-      overflow: hidden
-    }
-
-    body {
-      position: relative;
-      background: black;
-    }
-
-    #game-canvas {
-      display: block;
-      margin: 50px auto;
-      border: 2px solid white;
-    }
-
-    </style>
+    <link href="lib/styles/style.css" rel="stylesheet">
   </head>
-  <body>
+  <body class="group">
     <canvas id="game-canvas"></canvas>
 
+    <section class="user-webcam">
+      <video autoplay id="webcam"></video>
+      <canvas id="webcam-canvas"></canvas>
+    </section>
+
     <script src="vendor/keymaster.js"></script>
-    <script src="lib/ball.js"></script>
-    <script src="lib/paddle.js"></script>
-    <script src="lib/game.js"></script>
-    <script src="lib/game_view.js"></script>
-    <script type="text/javascript">
-    </script>
-    <script src="lib/brick.js"></script>
+    <script src="lib/game/ball.js"></script>
+    <script src="lib/game/paddle.js"></script>
+    <script src="lib/game/game.js"></script>
+    <script src="lib/game/game_view.js"></script>
+    <script src="lib/game/brick.js"></script>
+
+    <script src="lib/face_detection/webcam_setup.js"></script>
+
+    <script src="vendor/object_detect/compatibility.js"></script>
+  	<script src="vendor/object_detect/objectdetect.js"></script>
+  	<script src="vendor/object_detect/objectdetect.frontalface_alt.js"></script>
+  	<script src="lib/face_detection/the_face_in_brickface.js"></script>
 
     <script>
       //PH -- technically, this is document-on-ready -- only runs after all files are loaded

@@ -3,7 +3,11 @@
  * not conforming to the latest standard (yet). Supported Browsers are:
  * Chrome, Opera and Firefox (soon).
  */
-var compatibility = (function() {
+
+window.Bricks = window.Bricks || {};
+//**PH - I'm not going to wrap this in a bigger IIFE because I want the local variables to be accessible from anywhere; 
+
+Bricks.Compatibility = (function() {
 	var lastTime = 0,
 
 		URL = window.URL || window.webkitURL,
@@ -39,6 +43,7 @@ var compatibility = (function() {
 			return getUserMedia.call(window.navigator, options, success, error);
 		};
 
+	//PH** - calling compatibility variable invokes this page of code, returning the vars/funcs below as publically accessible entities. The rest is, of course, namespaced inside the immediate IIFE
 	return {
 		URL: URL,
 		requestAnimationFrame: requestAnimationFrame,

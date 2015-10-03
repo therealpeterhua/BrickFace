@@ -49,6 +49,7 @@
 
           		// Perform the actual detection:
 				var coords = detector.detect(video, 1);
+				console.log(coords.length);
 				//PH ** - you'll wanna grab this coord and see what it is... looks like it pulls a range of coordinates out of objectdetect.js
 				if (coords[0]) {
 					var coord = coords[0];
