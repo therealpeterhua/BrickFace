@@ -8,11 +8,38 @@
   <body class="group">
     <canvas id="game-canvas"></canvas>
 
+    <h1> BRICKFACE </h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <section class="user-webcam">
       <video autoplay id="webcam"></video>
       <canvas id="webcam-canvas"></canvas>
     </section>
 
+    <div class="lives-counter">
+      <h2>Lives Left</h2>
+      <strong class="lives-left"></strong>
+    </div>
+
+    <script src="vendor/jquery-2.1.1.js"></script>
     <script src="vendor/keymaster.js"></script>
     <script src="lib/game/ball.js"></script>
     <script src="lib/game/paddle.js"></script>
@@ -32,15 +59,15 @@
       //FIX USER FACE INPUT LAG
       //can set webcam canvas height directly here!
 
-      var gameCanvas = document.getElementById("game-canvas");
+      var gameCanvas = $('#game-canvas')[0];
       gameCanvas.height = Bricks.Game.DIM_Y;      //should grab from Game class. Can also set CSS on it...
       gameCanvas.width = Bricks.Game.DIM_X;
 
-      videoCanvas = document.getElementById("webcam-canvas");
+      videoCanvas = $('#webcam-canvas')[0];
 
       var gameView = new Bricks.GameView(
-        gameCanvas.getContext("2d"),
-        videoCanvas.getContext("2d")
+        gameCanvas.getContext('2d'),
+        videoCanvas.getContext('2d')
       );
 
       gameView.start();

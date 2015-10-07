@@ -9,6 +9,7 @@ body {
   width: 100%;
   height: 100%;
   overflow-x: auto;
+  color: white;
 }
 
 .group:after {
@@ -54,3 +55,6 @@ canvas#webcam-canvas {
   opacity: 0.25;
 }
 /* PH**** - adjust length of this canvas according to length of the user-webcam video */
+
+strong.lives-left {
+}
