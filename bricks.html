@@ -20,21 +20,28 @@
     <script src="lib/game/game_view.js"></script>
     <script src="lib/game/brick.js"></script>
 
-    <script src="lib/face_detection/webcam_setup.js"></script>
-    <script src="lib/face_detection/compatibility.js"></script>
+    <script src="lib/detection/webcam_setup.js"></script>
+    <script src="lib/detection/compatibility.js"></script>
 
   	<script src="vendor/object_detect/objectdetect.js"></script>
   	<script src="vendor/object_detect/objectdetect.frontalface_alt.js"></script>
-  	<script src="lib/face_detection/the_face_in_brickface.js"></script>
+  	<script src="lib/detection/the_face_in_brickface.js"></script>
 
     <script>
-      //PH -- technically, this is document-on-ready -- only runs after all files are loaded
+      //FIX PADDLE KEYS BACKWARDS
+      //FIX USER FACE INPUT LAG
+      //can set webcam canvas height directly here!
 
-      var canvasEl = document.getElementById("game-canvas");
-      canvasEl.height = Bricks.Game.DIM_Y;      //should grab from Game class. Can also set CSS on it...
-      canvasEl.width = Bricks.Game.DIM_X;
+      var gameCanvas = document.getElementById("game-canvas");
+      gameCanvas.height = Bricks.Game.DIM_Y;      //should grab from Game class. Can also set CSS on it...
+      gameCanvas.width = Bricks.Game.DIM_X;
 
-      var gameView = new Bricks.GameView( canvasEl.getContext("2d") );
+      videoCanvas = document.getElementById("webcam-canvas");
+
+      var gameView = new Bricks.GameView(
+        gameCanvas.getContext("2d"),
+        videoCanvas.getContext("2d")
+      );
 
       gameView.start();
 

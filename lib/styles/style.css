@@ -22,9 +22,9 @@ body {
   float: left;
   margin: 10px;
   border: 2px solid white;
-  transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg); /* Safari and Chrome */
-  -moz-transform: rotateY(180deg); /* Firefox */
+  /*transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);*/
 }
 
 section.user-webcam {
