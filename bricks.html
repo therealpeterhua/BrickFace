@@ -32,6 +32,7 @@
           <ul>
             <li>SPACE   Launch ball</li>
             <li>← →   Move paddle</li>
+            <li>P   Pause</li>
           </ul>
           <br>
           <p>
@@ -61,15 +62,11 @@
   	<script src="lib/detection/the_face_in_brickface.js"></script>
 
     <script>
-      //FIX PADDLE KEYS BACKWARDS
-      //FIX USER FACE INPUT LAG
-      //can set webcam canvas height directly here!
-
       var gameCanvas = $('#game-canvas')[0];
-      gameCanvas.height = Bricks.Game.DIM_Y;      //should grab from Game class. Can also set CSS on it...
+      gameCanvas.height = Bricks.Game.DIM_Y;
       gameCanvas.width = Bricks.Game.DIM_X;
 
-      videoCanvas = $('#webcam-canvas')[0];
+      var videoCanvas = $('#webcam-canvas')[0];
 
       var gameView = new Bricks.GameView(
         gameCanvas.getContext('2d'),
@@ -77,10 +74,6 @@
       );
 
       gameView.start();
-
-      // var game = new Bricks.GameView(canvasEl.getContext("2d"));
-      // game.start();
-      // console.log(key.getPressedKeyCodes())
     </script>
   </body>
 </html>
