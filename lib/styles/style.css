@@ -38,6 +38,7 @@ div.game-main {
 
 section.game-element {
   float: left;
+  position: relative;
 }
 
 h1.game-title {
@@ -54,6 +55,50 @@ canvas#game-canvas {
   /*transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);*/
+}
+
+section.game-element div {
+  z-index: 2;
+  display: block;
+  position: absolute;
+  color: white;
+}
+
+section.game-element div.new-game {
+  top: 400px;
+  left: 125px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+section.game-element div.win-message {
+  font-size: 28px;
+  cursor: default;
+  top: 300px;
+  left: 150px;
+}
+
+section.game-element div.lose-message {
+  font-size: 28px;
+  cursor: default;
+  top: 300px;
+  left: 145px;
+}
+
+section.game-element div.new-game:hover {
+  color: green;
+}
+
+section.game-element div.new-game.hidden {
+  display: none;
+}
+
+section.game-element div.lose-message.hidden {
+  display: none;
+}
+
+section.game-element div.win-message.hidden {
+  display: none;
 }
 
 section.user-webcam {
