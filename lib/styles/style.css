@@ -11,6 +11,10 @@ html, body, canvas, ul, li, a, h1, h2, strong {
   background: transparent;
 }
 
+ul {
+  list-style: none;
+}
+
 body {
   font-family: sans-serif;
   position: relative;
@@ -56,13 +60,12 @@ section.user-webcam {
   position: relative;
   display: block;
   float: left;
-  width: 405px;
-  height: 600px;
+  width: 450px;
+  margin-top: 50px;
 }
 
 section.user-webcam video {
   width: 100%;
-  margin-top: 20px;
   /*transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);*/
@@ -72,11 +75,45 @@ canvas#webcam-canvas {
   position: absolute;
   top: 0px;
   display: block;
-  margin-top: 20px;
   /*width: 100%;
   height: 100%;*/
 }
 /* PH**** - adjust length of this canvas according to length of the user-webcam video */
 
-strong.lives-left {
+div.game-text {
+  padding: 15px;
+  width: 500px;
+  float: left;
+}
+
+div.game-text div.lives-counter {
+  padding: 10px 25px;
+  float: left;
+  border: 2px solid white;
+  text-align: center;
+}
+
+div.lives-counter-container {
+  display: block;
+}
+
+div.lives-counter h2 {
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+div.lives-counter strong.lives-left {
+  display: block;
+  font-size: 24px;
+  color: lightgreen;
+  font-weight: bold;
+}
+
+div.game-text div.rules {
+  margin-top: 20px;
+  display: block;
+  float: left;
+  font-size: 19px;
 }
