@@ -1,14 +1,22 @@
-html, body, canvas {
-  padding: 0px;
-  margin: 0px;
+html, body, canvas, ul, li, a, h1, h2, strong {
+  padding: 0;
+  margin: 0;
+  border: none;
+
+  font: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  color: inherit;
+
+  background: transparent;
 }
 
 body {
+  font-family: sans-serif;
   position: relative;
   background: black;
   width: 100%;
   height: 100%;
-  overflow-x: auto;
   color: white;
 }
 
@@ -18,9 +26,25 @@ body {
   clear: both;
 }
 
-#game-canvas {
-  display: block;
+div.game-main {
+  margin-left: 50px;
+  margin-top: 15px;
+  overflow-x: auto;
+}
+
+section.game-element {
   float: left;
+}
+
+h1.game-title {
+  font-size: 36px;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+}
+
+canvas#game-canvas {
+  display: block;
   margin: 10px;
   border: 2px solid white;
   /*transform: rotateY(180deg);
@@ -39,9 +63,9 @@ section.user-webcam {
 section.user-webcam video {
   width: 100%;
   margin-top: 20px;
-  transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg); /* Safari and Chrome */
-  -moz-transform: rotateY(180deg); /* Firefox */
+  /*transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);*/
 }
 
 canvas#webcam-canvas {
@@ -49,10 +73,10 @@ canvas#webcam-canvas {
   top: 0px;
   display: block;
   margin-top: 20px;
-  width: 100%;
-  height: 100%;
-  background: white;
-  opacity: 0.25;
+  /*width: 100%;
+  height: 100%;*/
+  background: lightblue;
+  opacity: 0.5;
 }
 /* PH**** - adjust length of this canvas according to length of the user-webcam video */
 

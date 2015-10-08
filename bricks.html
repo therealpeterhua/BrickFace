@@ -6,37 +6,30 @@
     <link href="lib/styles/style.css" rel="stylesheet">
   </head>
   <body class="group">
-    <canvas id="game-canvas"></canvas>
+    <div class="game-main">
+      <section class="game-element">
+        <h1 class="game-title"> BRICKFACE </h1>
+        <canvas id="game-canvas"></canvas>
+      </section>
 
-    <h1> BRICKFACE </h1>
+      <section class="user-webcam">
+        <video autoplay id="webcam"></video>
+        <canvas id="webcam-canvas"></canvas>
+      </section>
 
+      <div class="lives-counter">
+        <h2>Lives Left</h2>
+        <strong class="lives-left"></strong>
+      </div>
+      <p class="rules">
+        <ul>
+          <li>SPACE   Launch ball</li>
+          <li>← →   Move paddle</li>
 
+        </ul>
+        If you have a webcam enabled, move the paddle with your face. Else, use left-right arrows to steer.
+      </p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <section class="user-webcam">
-      <video autoplay id="webcam"></video>
-      <canvas id="webcam-canvas"></canvas>
-    </section>
-
-    <div class="lives-counter">
-      <h2>Lives Left</h2>
-      <strong class="lives-left"></strong>
     </div>
 
     <script src="vendor/jquery-2.1.1.js"></script>
