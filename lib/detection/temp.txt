@@ -26,7 +26,7 @@
   };
 
   FaceDetect.prototype.halt = function() {
-    // clearInterval(this.detectionIntervalId);       //PH*** - HANDLE THIS!
+    // clearInterval(this.detectionIntervalId);
   }
 
   FaceDetect.prototype.setupMedia = function() {
@@ -57,12 +57,13 @@
     }
 
 		if (video.readyState === video.HAVE_ENOUGH_DATA && video.videoWidth > 0) {
-      // prepare drawing board & detector once video dimensions known
+      // prepare detector once video dimensions known
       this.checkCanvasSetup();
       this.checkDetectorSetup();
 
       //returns array of all faces detected, each face [x, y, width, height]
 			var facesDetected = this.detector.detect(video, 1);
+      // console.log(facesDetected);
       if (facesDetected[0]) {
         this.handleDetectedFaces(facesDetected);
       }
@@ -95,14 +96,22 @@
   };
 
   FaceDetect.prototype.handleDetectedFaces = function(faces) {
+
+    // this.vCtx.fillRect(20, 20, 50, 50);
+    // this.vCtx.fillRect(40, 40, 50, 50);
     var largestFace = this.findLargestFace(faces);
     this.drawFaceBox(largestFace);
     var coord = largestFace[0] + (largestFace[2] / 2);
+    // var adjustedCoord = (
+    //   coord * this.video.videoWidth / this.detector.canvas.width
+    // );     //converts to video coordinate space;
 
-    //pre-processing
+    //PH**** preprocess it first -- maybe change it to render once every 50 seconds and wait for the other 50/make a new request if it thinks ur face is to the left?
+
     var scaledCoord = this.scaleForGame(coord);
     console.log('still pushing to game...');
     this.pushFaceSpotToGame(scaledCoord);
+    //PH** -- rehandle the scaled coordinate;
   };
 
   FaceDetect.prototype.findLargestFace = function(faces) {
