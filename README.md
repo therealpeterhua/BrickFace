@@ -7,6 +7,7 @@ Brick-breaker / Breakout with face recognition
 ![screenshot] (screenshot.png)
 
 ## Features
-* Implements refactored object detect library, optimized for browser play and seamless UX
-* Custom smoothing functions and preprocessing protects against choppy movement and false positives in detection
+* Implements refactored object detect library, optimized for the browser
+* Custom smoothing functions and preprocessing protects against choppy movement and false positives
+* Asynch detection runs parallel to gameplay, both render on dual canvas elements
 * Keyboard controls if no webcam available
