@@ -2,7 +2,7 @@
 Brick-breaker / Breakout with face recognition
 
 ####[Live URL][live_url]
-[live_url]: http://www.peterhua.xyz/bricks/bricks.html
+[live_url]: https://thelrner.github.io/bricks/start.html
 
 ![screenshot] (screenshot.png)
 
